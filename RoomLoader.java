@@ -26,13 +26,13 @@ public class RoomLoader extends AbstractRoomLoader {
     @Override
     public Room getStart() {
         
-         Room room1 = new Room("one", null);
+         Room room1 = new Room("one", "start");
          return room1;
     }
 
     @Override
     public Room getEnd() {
-        Room room7 = new Room("seven", null);
+        Room room7 = new Room("seven", "end");
         return room7;   
      }
     
