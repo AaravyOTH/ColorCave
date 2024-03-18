@@ -2,6 +2,8 @@ import org.w3c.dom.Node;
 
 public class RoomLoader extends AbstractRoomLoader {
     public RoomLoader(){
+        load();
+        serialize("YellowBlueStart;");
     }
     @Override
     public void load() {
@@ -12,7 +14,8 @@ public class RoomLoader extends AbstractRoomLoader {
         Room room5 = new Room("five", null);
         Room room6 = new Room("six",null);
         Room room7 = getEnd();
-
+        start = room1;
+        end = room7;
         room1.addDoor(Door.RED, room2);
         room1.addDoor(Door.BLUE, room3);
         room2.addDoor(Door.GREEN, room4);
