@@ -1,7 +1,7 @@
 import java.io.*;
 public abstract class AbstractRoomLoader implements Serializable {
 
-	private Room start, end;
+	protected Room start, end;
 
 	public abstract void load();
 
