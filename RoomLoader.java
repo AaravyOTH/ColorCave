@@ -38,5 +38,11 @@ public class RoomLoader extends AbstractRoomLoader {
         Room room7 = new Room("seven", "end");
         return room7;   
      }
+
+     public static void main(String[] args) {
+        AbstractRoomLoader rL = new RoomLoader();
+        rL = rL.deserialize("YelloBlueStart.ser");
+        //System.out.println(rL.getStart());
+     }
     
 }
