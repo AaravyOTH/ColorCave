@@ -8,20 +8,19 @@ public class RoomLoader extends AbstractRoomLoader {
     }
     @Override
     public void load() {
-        Room room1 = getStart();
+        Room room1 = new Room("one", "");
         Room room2 = new Room("two", "");
         Room room3 = new Room("three", "");
         Room room4 = new Room("four", "");
         Room room5 = new Room("five", "");
         Room room6 = new Room("six","");
-        Room room7 = getEnd();
+        Room room7 = new Room("seven", "");
         room1.addDoor(Door.RED, room2);
         room1.addDoor(Door.BLUE, room3);
         room2.addDoor(Door.GREEN, room4);
         room2.addDoor(Door.PINK, room5);
         room3.addDoor(Door.BLUE, room6);
         room5.addDoor(Door.RED, room7);
-
         //add rooms to cave using addRoom method (cave.addRoom(room1))
         //maybe make array
         cave.addRoom(room1);
