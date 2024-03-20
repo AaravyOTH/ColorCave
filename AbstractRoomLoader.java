@@ -1,13 +1,14 @@
 import java.io.*;
-public abstract class AbstractRoomLoader implements Serializable {
+import java.util.*;
+public abstract class AbstractRoomLoader {
 
-	protected Room start, end;
+	protected CaveData cave;
 
 	public abstract void load();
 
-	public abstract Room getStart();
+	public Room getStart(){  return cave.getStart(); }
 
-	public abstract Room getEnd();
+	public Room getEnd(){ return cave.getEnd(); }
 
 	public void serialize(String fileName){
 		// Serialization
@@ -18,12 +19,12 @@ public abstract class AbstractRoomLoader implements Serializable {
 				ObjectOutputStream out = new ObjectOutputStream(file);
 
 				// Method for serialization of object
-				out.writeObject(this);
+				out.writeObject(cave);
 
 				out.close();
 				file.close();
 
-				System.out.println("RoomLoader has been serialized to =>"+fileName);
+				System.out.println("Cave has been serialized to =>"+fileName);
 
 		}
 
@@ -34,8 +35,7 @@ public abstract class AbstractRoomLoader implements Serializable {
 
 	}
 
-public AbstractRoomLoader deserialize(String fileName){
-	AbstractRoomLoader rL = null;
+public void deserialize(String fileName){
 		try
 		{
 				// Reading the object from a file
@@ -43,13 +43,13 @@ public AbstractRoomLoader deserialize(String fileName){
 				ObjectInputStream in = new ObjectInputStream(file);
 
 				// Method for deserialization of object
-				rL = (AbstractRoomLoader)in.readObject();
+				cave = (CaveData)in.readObject();
 
 				in.close();
 				file.close();
 
 				System.out.println("Object has been deserialized  from file "+fileName);
-				System.out.println("Start = "+rL.getStart()+", end = "+rL.getEnd());
+				System.out.println("Start = "+getStart()+", end = "+getEnd());
 		}
 
 		catch(IOException ex)
@@ -61,8 +61,6 @@ public AbstractRoomLoader deserialize(String fileName){
 		{
 				System.out.println("ClassNotFoundException is caught => "+ex);
 		}
-
-		return rL;
 
 }
 

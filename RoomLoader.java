@@ -2,20 +2,19 @@ import org.w3c.dom.Node;
 
 public class RoomLoader extends AbstractRoomLoader {
     public RoomLoader(){
+        cave = new CaveData();
         load();
-        serialize("YellowBlueStart;");
+   //     serialize("YellowBlueStart;");
     }
     @Override
     public void load() {
         Room room1 = getStart();
-        Room room2 = new Room("two", null);
-        Room room3 = new Room("three", null);
-        Room room4 = new Room("four", null);
-        Room room5 = new Room("five", null);
-        Room room6 = new Room("six",null);
+        Room room2 = new Room("two", "");
+        Room room3 = new Room("three", "");
+        Room room4 = new Room("four", "");
+        Room room5 = new Room("five", "");
+        Room room6 = new Room("six","");
         Room room7 = getEnd();
-        start = room1;
-        end = room7;
         room1.addDoor(Door.RED, room2);
         room1.addDoor(Door.BLUE, room3);
         room2.addDoor(Door.GREEN, room4);
@@ -23,25 +22,27 @@ public class RoomLoader extends AbstractRoomLoader {
         room3.addDoor(Door.BLUE, room6);
         room5.addDoor(Door.RED, room7);
 
+        //add rooms to cave using addRoom method (cave.addRoom(room1))
+        //maybe make array
+        cave.addRoom(room1);
+        cave.addRoom(room2);
+        cave.addRoom(room3);
+        cave.addRoom(room4);
+        cave.addRoom(room5);
+        cave.addRoom(room6);
+        cave.addRoom(room7);
+
+        //set start and set end
+        cave.setStart(room1);
+        cave.setEnd(room7);
 
     }
 
-    @Override
-    public Room getStart() {
-        
-         Room room1 = new Room("one", "start");
-         return room1;
-    }
 
-    @Override
-    public Room getEnd() {
-        Room room7 = new Room("seven", "end");
-        return room7;   
-     }
 
      public static void main(String[] args) {
-        AbstractRoomLoader rL = new RoomLoader();
-        rL = rL.deserialize("YelloBlueStart.ser");
+        //AbstractRoomLoader rL = new RoomLoader();
+       // rL = rL.deserialize("YelloBlueStart.ser");
         //System.out.println(rL.getStart());
      }
     

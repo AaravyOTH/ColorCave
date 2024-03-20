@@ -6,7 +6,7 @@ public class CaveBot {
 
     public void load(){
         AbstractRoomLoader loader = new RoomLoader();
-        loader = loader.deserialize("");
+        //loader = loader.deserialize("");
          
     }
 

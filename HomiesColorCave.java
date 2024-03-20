@@ -19,7 +19,8 @@ public class HomiesColorCave extends JPanel implements MouseListener
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		loader = new RoomLoader(); //need to extend abstract with concrete class
-		//loader = loader.deserialize("YellowBlueStart.ser");
+		//loader.deserialize("YellowBlueStart.ser"); //uncomment this when using  .ser file.
+		loader.load();
 		room = loader.getStart();
 		end = loader.getEnd();
 	}
