@@ -20,11 +20,14 @@ public class HomiesColorCave extends JPanel implements MouseListener {
 		frame.setVisible(true);
 		loader = new RoomLoader();
 		//loader.deserialize("YellowBlueStart.ser"); //uncomment this when using  .ser file.
-		loader.load();
+		//loader.load();
+		//loader.deserialize("RedPinkRed.ser");
+		//loader.deserialize("GreenYellowRedLooping.ser");
+		loader.deserialize("YellowWeb.ser");
 		room = loader.getStart();
 		end = loader.getEnd();
 		path = new HashMap<Rectangle, Door>();
-		//loader.serialize("Homies.ser");
+		//loader.serialize("YellowWeb.ser");
 	}
 
 	public void paintComponent(Graphics g) {
