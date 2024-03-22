@@ -19,7 +19,7 @@ public class RoomLoader extends AbstractRoomLoader {
         room1.addDoor(Door.BLUE, room3);
         room2.addDoor(Door.GREEN, room4);
         room2.addDoor(Door.PINK, room5);
-        room3.addDoor(Door.BLUE, room6);
+        room3.addDoor(Door.YELLOW, room6);
         room5.addDoor(Door.RED, room7);
         //add rooms to cave using addRoom method (cave.addRoom(room1))
         //maybe make array
