@@ -23,6 +23,7 @@ public class HomiesColorCave extends JPanel implements MouseListener
 		loader.load();
 		room = loader.getStart();
 		end = loader.getEnd();
+		//loader.serialize("Homies.ser");
 	}
 	public void paintComponent(Graphics g)
 	{
