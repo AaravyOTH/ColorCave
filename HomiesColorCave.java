@@ -23,7 +23,7 @@ public class HomiesColorCave extends JPanel implements MouseListener {
 		//loader.load();
 		//loader.deserialize("RedPinkRed.ser");
 		//loader.deserialize("GreenYellowRedLooping.ser");
-		loader.deserialize("YellowWeb.ser");
+		loader.deserialize("TrialMaze4-2.ser");
 		room = loader.getStart();
 		end = loader.getEnd();
 		path = new HashMap<Rectangle, Door>();
