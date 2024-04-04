@@ -11,14 +11,15 @@ public class CaveBot {
     private static Room currRoom;
     Room room, end;
     Map<Rectangle, Door> path;
+    AbstractRoomLoader loader;
     public void load(){
-        AbstractRoomLoader loader = new RoomLoader();
-        loader.load();
+        loader = new RoomLoader();
+        //loader.load();
         loader.deserialize("TrialMaze4-2.ser");
         room = loader.getStart();
         end = loader.getEnd();
-        path = new HashMap<Rectangle, Door>();
         currRoom = loader.getStart();
+        path = new HashMap<Rectangle, Door>();
        // System.out.println("Current Room: " + currRoom.getDoors());
          
     }
